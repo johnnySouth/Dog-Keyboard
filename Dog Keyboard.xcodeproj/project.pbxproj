@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		605D1190292B644A0065FC44 /* Dog_KeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */; };
+		605D1192292B644A0065FC44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D1191292B644A0065FC44 /* ContentView.swift */; };
+		605D1194292B64530065FC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D1193292B64530065FC44 /* Assets.xcassets */; };
+		605D1198292B64530065FC44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D1197292B64530065FC44 /* Preview Assets.xcassets */; };
+		605D11A2292B64540065FC44 /* Dog_KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D11A1292B64540065FC44 /* Dog_KeyboardTests.swift */; };
+		605D11AC292B64540065FC44 /* Dog_KeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D11AB292B64540065FC44 /* Dog_KeyboardUITests.swift */; };
+		605D11AE292B64540065FC44 /* Dog_KeyboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D11AD292B64540065FC44 /* Dog_KeyboardUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		605D119E292B64540065FC44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 605D1184292B644A0065FC44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 605D118B292B644A0065FC44;
+			remoteInfo = "Dog Keyboard";
+		};
+		605D11A8292B64540065FC44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 605D1184292B644A0065FC44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 605D118B292B644A0065FC44;
+			remoteInfo = "Dog Keyboard";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		605D118C292B644A0065FC44 /* Dog Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_KeyboardApp.swift; sourceTree = "<group>"; };
+		605D1191292B644A0065FC44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		605D1193292B64530065FC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		605D1195292B64530065FC44 /* Dog_Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dog_Keyboard.entitlements; sourceTree = "<group>"; };
+		605D1197292B64530065FC44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		605D119D292B64540065FC44 /* Dog KeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog KeyboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		605D11A1292B64540065FC44 /* Dog_KeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_KeyboardTests.swift; sourceTree = "<group>"; };
+		605D11A7292B64540065FC44 /* Dog KeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog KeyboardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		605D11AB292B64540065FC44 /* Dog_KeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_KeyboardUITests.swift; sourceTree = "<group>"; };
+		605D11AD292B64540065FC44 /* Dog_KeyboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_KeyboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		605D1189292B644A0065FC44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D119A292B64540065FC44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D11A4292B64540065FC44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		605D1183292B644A0065FC44 = {
+			isa = PBXGroup;
+			children = (
+				605D118E292B644A0065FC44 /* Dog Keyboard */,
+				605D11A0292B64540065FC44 /* Dog KeyboardTests */,
+				605D11AA292B64540065FC44 /* Dog KeyboardUITests */,
+				605D118D292B644A0065FC44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		605D118D292B644A0065FC44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				605D118C292B644A0065FC44 /* Dog Keyboard.app */,
+				605D119D292B64540065FC44 /* Dog KeyboardTests.xctest */,
+				605D11A7292B64540065FC44 /* Dog KeyboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		605D118E292B644A0065FC44 /* Dog Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */,
+				605D1191292B644A0065FC44 /* ContentView.swift */,
+				605D1193292B64530065FC44 /* Assets.xcassets */,
+				605D1195292B64530065FC44 /* Dog_Keyboard.entitlements */,
+				605D1196292B64530065FC44 /* Preview Content */,
+			);
+			path = "Dog Keyboard";
+			sourceTree = "<group>";
+		};
+		605D1196292B64530065FC44 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				605D1197292B64530065FC44 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		605D11A0292B64540065FC44 /* Dog KeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				605D11A1292B64540065FC44 /* Dog_KeyboardTests.swift */,
+			);
+			path = "Dog KeyboardTests";
+			sourceTree = "<group>";
+		};
+		605D11AA292B64540065FC44 /* Dog KeyboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				605D11AB292B64540065FC44 /* Dog_KeyboardUITests.swift */,
+				605D11AD292B64540065FC44 /* Dog_KeyboardUITestsLaunchTests.swift */,
+			);
+			path = "Dog KeyboardUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		605D118B292B644A0065FC44 /* Dog Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605D11B1292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog Keyboard" */;
+			buildPhases = (
+				605D1188292B644A0065FC44 /* Sources */,
+				605D1189292B644A0065FC44 /* Frameworks */,
+				605D118A292B644A0065FC44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dog Keyboard";
+			productName = "Dog Keyboard";
+			productReference = 605D118C292B644A0065FC44 /* Dog Keyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		605D119C292B64540065FC44 /* Dog KeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605D11B4292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog KeyboardTests" */;
+			buildPhases = (
+				605D1199292B64540065FC44 /* Sources */,
+				605D119A292B64540065FC44 /* Frameworks */,
+				605D119B292B64540065FC44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				605D119F292B64540065FC44 /* PBXTargetDependency */,
+			);
+			name = "Dog KeyboardTests";
+			productName = "Dog KeyboardTests";
+			productReference = 605D119D292B64540065FC44 /* Dog KeyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		605D11A6292B64540065FC44 /* Dog KeyboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 605D11B7292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog KeyboardUITests" */;
+			buildPhases = (
+				605D11A3292B64540065FC44 /* Sources */,
+				605D11A4292B64540065FC44 /* Frameworks */,
+				605D11A5292B64540065FC44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				605D11A9292B64540065FC44 /* PBXTargetDependency */,
+			);
+			name = "Dog KeyboardUITests";
+			productName = "Dog KeyboardUITests";
+			productReference = 605D11A7292B64540065FC44 /* Dog KeyboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		605D1184292B644A0065FC44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					605D118B292B644A0065FC44 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					605D119C292B64540065FC44 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 605D118B292B644A0065FC44;
+					};
+					605D11A6292B64540065FC44 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 605D118B292B644A0065FC44;
+					};
+				};
+			};
+			buildConfigurationList = 605D1187292B644A0065FC44 /* Build configuration list for PBXProject "Dog Keyboard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 605D1183292B644A0065FC44;
+			productRefGroup = 605D118D292B644A0065FC44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				605D118B292B644A0065FC44 /* Dog Keyboard */,
+				605D119C292B64540065FC44 /* Dog KeyboardTests */,
+				605D11A6292B64540065FC44 /* Dog KeyboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		605D118A292B644A0065FC44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605D1198292B64530065FC44 /* Preview Assets.xcassets in Resources */,
+				605D1194292B64530065FC44 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D119B292B64540065FC44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D11A5292B64540065FC44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		605D1188292B644A0065FC44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605D1192292B644A0065FC44 /* ContentView.swift in Sources */,
+				605D1190292B644A0065FC44 /* Dog_KeyboardApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D1199292B64540065FC44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605D11A2292B64540065FC44 /* Dog_KeyboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605D11A3292B64540065FC44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				605D11AE292B64540065FC44 /* Dog_KeyboardUITestsLaunchTests.swift in Sources */,
+				605D11AC292B64540065FC44 /* Dog_KeyboardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		605D119F292B64540065FC44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 605D118B292B644A0065FC44 /* Dog Keyboard */;
+			targetProxy = 605D119E292B64540065FC44 /* PBXContainerItemProxy */;
+		};
+		605D11A9292B64540065FC44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 605D118B292B644A0065FC44 /* Dog Keyboard */;
+			targetProxy = 605D11A8292B64540065FC44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		605D11AF292B64540065FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		605D11B0292B64540065FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		605D11B2292B64540065FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Dog Keyboard/Dog_Keyboard.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dog Keyboard/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		605D11B3292B64540065FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Dog Keyboard/Dog_Keyboard.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dog Keyboard/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		605D11B5292B64540065FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-KeyboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dog Keyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dog Keyboard";
+			};
+			name = Debug;
+		};
+		605D11B6292B64540065FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-KeyboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dog Keyboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dog Keyboard";
+			};
+			name = Release;
+		};
+		605D11B8292B64540065FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-KeyboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dog Keyboard";
+			};
+			name = Debug;
+		};
+		605D11B9292B64540065FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-KeyboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dog Keyboard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		605D1187292B644A0065FC44 /* Build configuration list for PBXProject "Dog Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605D11AF292B64540065FC44 /* Debug */,
+				605D11B0292B64540065FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		605D11B1292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605D11B2292B64540065FC44 /* Debug */,
+				605D11B3292B64540065FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		605D11B4292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog KeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605D11B5292B64540065FC44 /* Debug */,
+				605D11B6292B64540065FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		605D11B7292B64540065FC44 /* Build configuration list for PBXNativeTarget "Dog KeyboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				605D11B8292B64540065FC44 /* Debug */,
+				605D11B9292B64540065FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 605D1184292B644A0065FC44 /* Project object */;
+}
