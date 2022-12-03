@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605105722931A4E700C9121E /* testContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605105712931A4E700C9121E /* testContentView.swift */; };
+		6051057629328F9400C9121E /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051057429328F9100C9121E /* CHCSVParser.m */; };
+		60527084292FEA3B00AD7165 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 60527083292FEA3B00AD7165 /* FirebaseAuth */; };
+		60527086292FEA3B00AD7165 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 60527085292FEA3B00AD7165 /* FirebaseFirestore */; };
+		60527088292FEA3B00AD7165 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 60527087292FEA3B00AD7165 /* FirebaseStorage */; };
+		6052708A292FEB1700AD7165 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60527089292FEB1700AD7165 /* GoogleService-Info.plist */; };
+		6052708C292FF59300AD7165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6052708B292FF59200AD7165 /* Assets.xcassets */; };
+		6052709029319E0300AD7165 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6052708F29319E0300AD7165 /* ImagePicker.swift */; };
 		605D1190292B644A0065FC44 /* Dog_KeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */; };
 		605D1192292B644A0065FC44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D1191292B644A0065FC44 /* ContentView.swift */; };
-		605D1194292B64530065FC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D1193292B64530065FC44 /* Assets.xcassets */; };
 		605D1198292B64530065FC44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D1197292B64530065FC44 /* Preview Assets.xcassets */; };
 		605D11A2292B64540065FC44 /* Dog_KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D11A1292B64540065FC44 /* Dog_KeyboardTests.swift */; };
 		605D11AC292B64540065FC44 /* Dog_KeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605D11AB292B64540065FC44 /* Dog_KeyboardUITests.swift */; };
@@ -34,10 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		605105712931A4E700C9121E /* testContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testContentView.swift; sourceTree = "<group>"; };
+		6051057329328F9000C9121E /* Dog Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		6051057429328F9100C9121E /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		6051057529328F9300C9121E /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		60510577293298E500C9121E /* Dog-Keyboard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Dog-Keyboard-Info.plist"; sourceTree = SOURCE_ROOT; };
+		60527089292FEB1700AD7165 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6052708B292FF59200AD7165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6052708F29319E0300AD7165 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		605D118C292B644A0065FC44 /* Dog Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_KeyboardApp.swift; sourceTree = "<group>"; };
 		605D1191292B644A0065FC44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		605D1193292B64530065FC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		605D1195292B64530065FC44 /* Dog_Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dog_Keyboard.entitlements; sourceTree = "<group>"; };
 		605D1197292B64530065FC44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		605D119D292B64540065FC44 /* Dog KeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog KeyboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60527084292FEA3B00AD7165 /* FirebaseAuth in Frameworks */,
+				60527086292FEA3B00AD7165 /* FirebaseFirestore in Frameworks */,
+				60527088292FEA3B00AD7165 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +112,18 @@
 		605D118E292B644A0065FC44 /* Dog Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				60510577293298E500C9121E /* Dog-Keyboard-Info.plist */,
 				605D118F292B644A0065FC44 /* Dog_KeyboardApp.swift */,
+				6052708F29319E0300AD7165 /* ImagePicker.swift */,
 				605D1191292B644A0065FC44 /* ContentView.swift */,
-				605D1193292B64530065FC44 /* Assets.xcassets */,
+				6051057529328F9300C9121E /* CHCSVParser.h */,
+				6051057429328F9100C9121E /* CHCSVParser.m */,
+				605105712931A4E700C9121E /* testContentView.swift */,
+				60527089292FEB1700AD7165 /* GoogleService-Info.plist */,
+				6052708B292FF59200AD7165 /* Assets.xcassets */,
 				605D1195292B64530065FC44 /* Dog_Keyboard.entitlements */,
 				605D1196292B64530065FC44 /* Preview Content */,
+				6051057329328F9000C9121E /* Dog Keyboard-Bridging-Header.h */,
 			);
 			path = "Dog Keyboard";
 			sourceTree = "<group>";
@@ -145,6 +169,11 @@
 			dependencies = (
 			);
 			name = "Dog Keyboard";
+			packageProductDependencies = (
+				60527083292FEA3B00AD7165 /* FirebaseAuth */,
+				60527085292FEA3B00AD7165 /* FirebaseFirestore */,
+				60527087292FEA3B00AD7165 /* FirebaseStorage */,
+			);
 			productName = "Dog Keyboard";
 			productReference = 605D118C292B644A0065FC44 /* Dog Keyboard.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +226,7 @@
 				TargetAttributes = {
 					605D118B292B644A0065FC44 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					605D119C292B64540065FC44 = {
 						CreatedOnToolsVersion = 14.1;
@@ -217,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 605D1183292B644A0065FC44;
+			packageReferences = (
+				60527082292FEA3B00AD7165 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 605D118D292B644A0065FC44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,7 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				605D1198292B64530065FC44 /* Preview Assets.xcassets in Resources */,
-				605D1194292B64530065FC44 /* Assets.xcassets in Resources */,
+				6052708C292FF59300AD7165 /* Assets.xcassets in Resources */,
+				6052708A292FEB1700AD7165 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6052709029319E0300AD7165 /* ImagePicker.swift in Sources */,
 				605D1192292B644A0065FC44 /* ContentView.swift in Sources */,
+				605105722931A4E700C9121E /* testContentView.swift in Sources */,
+				6051057629328F9400C9121E /* CHCSVParser.m in Sources */,
 				605D1190292B644A0065FC44 /* Dog_KeyboardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,6 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -411,12 +450,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Dog Keyboard/Dog_Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dog Keyboard/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G7H6L3242;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Dog-Keyboard-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -427,7 +470,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -435,8 +478,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-Keyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Dog Keyboard/Dog Keyboard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,12 +494,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Dog Keyboard/Dog_Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dog Keyboard/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G7H6L3242;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Dog-Keyboard-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -463,7 +514,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -471,8 +522,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "TeamK9.Dog-Keyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Dog Keyboard/Dog Keyboard-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -604,6 +658,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60527082292FEA3B00AD7165 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60527083292FEA3B00AD7165 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60527082292FEA3B00AD7165 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		60527085292FEA3B00AD7165 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60527082292FEA3B00AD7165 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		60527087292FEA3B00AD7165 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60527082292FEA3B00AD7165 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 605D1184292B644A0065FC44 /* Project object */;
 }
