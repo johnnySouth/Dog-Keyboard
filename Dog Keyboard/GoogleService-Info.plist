@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>429503727378-01fg5t87v92lbcqgubn55g5oira78qsr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.429503727378-01fg5t87v92lbcqgubn55g5oira78qsr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCb19joKJ-4TwFec-e7l63cTDFoZmU5bWk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>429503727378</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>TeamK9.Dog-Keyboard</string>
+	<key>PROJECT_ID</key>
+	<string>c3p0-lab-db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>c3p0-lab-db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:429503727378:ios:855e8a350ee4627b3b15cb</string>
+</dict>
+</plist>

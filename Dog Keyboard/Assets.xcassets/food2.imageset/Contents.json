@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "food2.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
