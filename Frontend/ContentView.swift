@@ -28,6 +28,7 @@ struct homePage: View {
     @AppStorage("lexigramAlbum")  var lexigramAlbum:String = "Assorted"
     @State private var nameOfDog: String = ""
     @State private var dogNames: [String] = []
+    @State private var sessionUser = ""
     
     var body: some View {
         NavigationView{
@@ -63,7 +64,8 @@ struct homePage: View {
                             ForEach(dogNames, id: \.self) { dog in
                                 Button(dog, action: {selection = dog})
                             }            } .onChange(of: selection) { newValue in
-                                dogsForSession.append(selection)
+                               // dogsForSession.append(selection)
+                                dogForSession = selection
                             }
                         Text("                       ")
                         NavigationLink(destination: AddDog()) {
@@ -78,7 +80,7 @@ struct homePage: View {
                     Spacer()
                         .frame(height: -50)
                     LazyHGrid(rows: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Rows@*/[GridItem(.fixed(20))]/*@END_MENU_TOKEN@*/) {
-                        Text("                              ")
+
                         Text("Lexigram Album:")
                             .foregroundColor(Color.black)
                         Menu(lexigramAlbum)
@@ -411,9 +413,9 @@ struct audioSettings: View {
 var lexigrams: [String] = []
 var sessionGoal: String = ""
 var timeOfPress: [String] = []
-var dogsForSession: [String] = []
+var dogForSession: String = ""
 
-func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [String],dogsSelected: [String]){
+func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [String],dogSelected: String){
     let currentDateTime = Date()
     
     let formatter = DateFormatter()
@@ -435,7 +437,7 @@ func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [St
     
     //Header for the CSV file
  
-    csvWriter?.writeField("Dogs_For_Session")
+    csvWriter?.writeField("Test_User")
     csvWriter?.writeField("Session_Context")
     csvWriter?.writeField("Date_Time")
     csvWriter?.writeField("Lexigrams_Pressed")
@@ -446,9 +448,9 @@ func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [St
     var arrOfUserData = [[String]]()
     let lexigramString = lexigrams.joined(separator: ",")
     let dateString = timeOfPress.joined(separator: ",")
-    let dogString = dogsForSession.joined(separator: ",")
+   // let dogString = dogsForSession.joined(separator: ",")
     
-    arrOfUserData.append([dogString,sessionGoal,dateString,lexigramString])
+    arrOfUserData.append([dogForSession,sessionGoal,dateString,lexigramString])
     //arrOfUserData.append(["234","Johnson Doe","34","HR"])
     //arrOfUserData.append(["567","John Appleseed","40","Engg"])
 
@@ -535,7 +537,7 @@ struct exportPage: View {
                         }
                     }
                     Button("Export") {
-                        exportData(lexigramPressed:lexigrams, sessionContext: sessionGoal, dateTiime: timeOfPress,dogsSelected: dogsForSession)
+                        exportData(lexigramPressed:lexigrams, sessionContext: sessionGoal, dateTiime: timeOfPress,dogSelected: dogForSession)
                         showAlert = true
                     }                    .foregroundColor(Color.white)
                     .frame(width: 300, height: 50)
