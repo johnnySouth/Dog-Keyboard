@@ -1,5 +1,7 @@
 import SwiftUI
 import AVFoundation
+import Firebase
+import FirebaseAuth
 
 //Custom colors
 
@@ -24,6 +26,8 @@ struct homePage: View {
     @State private var sessionContext = ""
     @AppStorage("selection") var selection:String = "Dog 1"
     @AppStorage("lexigramAlbum")  var lexigramAlbum:String = "Assorted"
+    @State private var nameOfDog: String = ""
+    @State private var dogNames: [String] = []
     
     var body: some View {
         NavigationView{
@@ -52,22 +56,31 @@ struct homePage: View {
                     
                     LazyHGrid(rows: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Rows@*/[GridItem(.fixed(20))]/*@END_MENU_TOKEN@*/) {
                         
-                        Text("Select your test user:")
-                            .foregroundColor(Color.black)
+                        Text("Select your test user:").foregroundColor(Color.black)
                         Text("                       ")
-                        Menu(selection)
+                        Menu (selection)
                         {
-                            Button("Dog 1", action: dog1)
-                            Button("Dog 2", action: dog2)
-                            Button("Dog 3", action: dog3)
+                            ForEach(dogNames, id: \.self) { dog in
+                                Button(dog, action: {selection = dog})
+                            }            } .onChange(of: selection) { newValue in
+                                dogsForSession.append(selection)
+                            }
+                        Text("                       ")
+                        NavigationLink(destination: AddDog()) {
+                        Text("Add New Dog")
+                        .foregroundColor(Color.white)
+                        .frame(width: 300, height: 50)
+                        .background(lightBlueColor
+                        )
+                        .cornerRadius(10)
                         }
                     }
                     Spacer()
                         .frame(height: -50)
                     LazyHGrid(rows: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Rows@*/[GridItem(.fixed(20))]/*@END_MENU_TOKEN@*/) {
+                        Text("                              ")
                         Text("Lexigram Album:")
                             .foregroundColor(Color.black)
-                        Text("                              ")
                         Menu(lexigramAlbum)
                         {
                             Button("Places", action: places)
@@ -91,6 +104,9 @@ struct homePage: View {
                                 .frame(width: 300, height: 50)
                                 .background(lightBlueColor)
                                 .cornerRadius(10)
+                                .onDisappear() {
+                                retrieveSessionContext()
+                                }
                         }
                     }else if lexigramAlbum == "Things"{
                         NavigationLink(destination: thingsActivityPage()) {
@@ -99,6 +115,9 @@ struct homePage: View {
                                 .frame(width: 300, height: 50)
                                 .background(lightBlueColor)
                                 .cornerRadius(10)
+                                .onDisappear() {
+                                retrieveSessionContext()
+                                }
                         }
                     }else if lexigramAlbum == "Feelings"{
                         NavigationLink(destination: feelingsActivityPage()) {
@@ -107,7 +126,9 @@ struct homePage: View {
                                 .frame(width: 300, height: 50)
                                 .background(lightBlueColor)
                                 .cornerRadius(10)
-                            
+                                .onDisappear() {
+                                retrieveSessionContext()
+                                }
                         }
                     }else if lexigramAlbum == "Actions"{
                         NavigationLink(destination: actionsActivityPage()) {
@@ -116,18 +137,25 @@ struct homePage: View {
                                 .frame(width: 300, height: 50)
                                 .background(lightBlueColor)
                                 .cornerRadius(10)
-                            
+                                .onDisappear() {
+                                retrieveSessionContext()
+                                }
                         }
                     }
-                    
                 }
-                
             }
         }
         .accentColor(darkBlueColor)
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
+        .onAppear(){
+            fetchDogs()
+        }
     }
+    func retrieveSessionContext(){
+        sessionGoal = sessionContext
+    }
+
     func dog1() {
         selection = "Dog 1"
     }
@@ -154,12 +182,33 @@ struct homePage: View {
     //func assorted() {
       //  lexigramAlbum = "Assorted"
    // }
+    func fetchDogs(){
+        // Get the data from database
+        let db = Firestore.firestore()
+        
+        db.collection("Dogs").getDocuments { snapshot, error in
+            
+            if error == nil && snapshot != nil{
+                
+                
+                //Loop througn all the returned docs
+                for doc in snapshot!.documents {
+                    // Extract the file path
+                    dogNames.append(doc["name"] as! String)
+                }
+                
+                for name in dogNames{
+                    print("\(name)")
+                }
+            }
+        }
+    }
 }
 
 struct loginScreen: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
-    @State private var wrongUsername = 0
+    @State private var wrongEmail = 0
     @State private var wrongPassword = 0
     @Binding var showingLoginScreen: Bool
     @State private var user = 0
@@ -214,12 +263,12 @@ struct loginScreen: View {
                         .foregroundColor(Color.black)
                         .bold()
                         .padding()
-                    TextField("Username", text: $username)
+                    TextField("Email", text: $email)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red,width: CGFloat(wrongUsername))
+                        .border(.red,width: CGFloat(wrongEmail))
                     SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
@@ -227,20 +276,19 @@ struct loginScreen: View {
                         .cornerRadius(10)
                         .border(.red,width: CGFloat(wrongPassword))
                     Button("Login"){
-                        authenticateUser(username: username, password: password)
-                    }
-                    .foregroundColor(Color.white)
+                        login()
+                    }                    .foregroundColor(Color.white)
                     .frame(width: 300, height: 50)
                     .background(lightBlueColor)
                     .cornerRadius(10)
                     
-                   /* NavigationLink(destination: newUser( )) {
+                    NavigationLink(destination: newUser( )) {
                         Text("Register")
                             .foregroundColor(Color.white)
                             .frame(width: 300, height: 50)
                             .background(lightBlueColor)
                             .cornerRadius(10)
-                    }*/
+                    }
                     
                 }
             }
@@ -250,17 +298,13 @@ struct loginScreen: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
     }
-    func authenticateUser(username: String, password: String){
-        if username.lowercased() == "user"{
-            wrongUsername = 0
-            if password.lowercased() == "123"{
-                wrongPassword = 0
-                showingLoginScreen = true
-            } else {
-                wrongPassword = 2
+    func login(){
+        Auth.auth().signIn(withEmail: email, password: password){
+            result, error in
+            if error != nil{
+                print(error!.localizedDescription)
             }
-        } else {
-            wrongUsername = 2
+            else{showingLoginScreen = true}
         }
     }
 }
@@ -363,11 +407,81 @@ struct audioSettings: View {
     }
 }
 
-/*struct exportPage: View {
+
+var lexigrams: [String] = []
+var sessionGoal: String = ""
+var timeOfPress: [String] = []
+var dogsForSession: [String] = []
+
+func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [String],dogsSelected: [String]){
+    let currentDateTime = Date()
+    
+    let formatter = DateFormatter()
+    formatter.timeStyle = .medium
+    formatter.dateStyle = .medium
+    
+    let dateTimeString = formatter.string(from: currentDateTime)
+    print(NSHomeDirectory())
+    // File Name
+    let sFileName = "Session: \(dateTimeString).csv"
+    
+    let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+    
+    let documentURL = URL(fileURLWithPath: documentDirectoryPath).appendingPathComponent(sFileName)
+    
+    let output =  OutputStream.toMemory()
+    
+    let csvWriter = CHCSVWriter(outputStream: output, encoding: String.Encoding.utf8.rawValue, delimiter: ",".utf16.first!)
+    
+    //Header for the CSV file
+ 
+    csvWriter?.writeField("Dogs_For_Session")
+    csvWriter?.writeField("Session_Context")
+    csvWriter?.writeField("Date_Time")
+    csvWriter?.writeField("Lexigrams_Pressed")
+    csvWriter?.finishLine()
+    
+    //Array to add data to add Users
+    
+    var arrOfUserData = [[String]]()
+    let lexigramString = lexigrams.joined(separator: ",")
+    let dateString = timeOfPress.joined(separator: ",")
+    let dogString = dogsForSession.joined(separator: ",")
+    
+    arrOfUserData.append([dogString,sessionGoal,dateString,lexigramString])
+    //arrOfUserData.append(["234","Johnson Doe","34","HR"])
+    //arrOfUserData.append(["567","John Appleseed","40","Engg"])
+
+    
+   // arrOfUserData.append(lexigrams)
+    
+    //Employee_ID,Employee_Name,Employee_Age,Employee_Designation
+    // 123          John Doe        30          Sys Analyst
+    for(elements) in arrOfUserData.enumerated(){
+        csvWriter?.writeField(elements.element[0]) // Dog_In_Session
+        csvWriter?.writeField(elements.element[1]) // Session_Context
+        csvWriter?.writeField(elements.element[2]) // Date/Time
+        csvWriter?.writeField(elements.element[3]) // Lexigrams_Pressed
+        csvWriter?.finishLine() //Creates a new line
+    }
+        csvWriter?.closeStream()
+        
+        let buffer = (output.property(forKey: .dataWrittenToMemoryStreamKey) as? Data)!
+        
+        do{
+            try buffer.write(to: documentURL)
+        }
+        catch{
+          print("error")
+        }
+}
+
+struct exportPage: View {
     
     
     @AppStorage("selection") var selection:String = "All Users"
     @AppStorage("timePeriod") var timePeriod:String = "Last 30 days"
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView{
@@ -420,13 +534,16 @@ struct audioSettings: View {
                             print("I love buttons")
                         }
                     }
-                    Button("Download") {
-                        print("Heres your data")
-                    }
-                    .foregroundColor(Color.white)
+                    Button("Export") {
+                        exportData(lexigramPressed:lexigrams, sessionContext: sessionGoal, dateTiime: timeOfPress,dogsSelected: dogsForSession)
+                        showAlert = true
+                    }                    .foregroundColor(Color.white)
                     .frame(width: 300, height: 50)
                     .background(lightBlueColor)
                     .cornerRadius(10)
+                    .alert("File for the current session has been saved.", isPresented: $showAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
                     
                     NavigationLink(destination: settingHome()) {
                         Image(systemName: "arrow.left")
@@ -463,17 +580,15 @@ struct audioSettings: View {
     func year() {
         timePeriod = "Year to Date"
     }
-}*/
+}
 
-
-
-
-/*struct newUser: View {
-    @State var username1 = ""
+struct newUser: View {
+    @State var email = ""
     @State private var password1 = ""
     @State private var password2 = ""
     @State var passMatch: Bool = false
     @State var showingLoginScreen = true
+    @State var userRegistered = false
     
     var body: some View {
         NavigationView{
@@ -497,65 +612,77 @@ struct audioSettings: View {
                         .bold()
                         .padding()
                     Text("Define user creditials below")
-                    
-                    TextField("Username", text: $username1)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                    
-                    SecureField("Password", text: $password1)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                    
-                    
+                
+                TextField("Email", text: $email)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(10)
+                
+                SecureField("Password", text: $password1)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(10)
+
+                Spacer()
+                    .frame(height: 50)
+                if email != "" && password1 != ""
+                {
                     Spacer()
-                        .frame(height: 50)
-                    if username1 != "" && password1 != ""
+                        .frame(height: 40)
+                    Text("Please re-enter your password")
+                        .foregroundColor(.gray)
+                    
+                    SecureField("Password", text: $password2)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                    
+                    if password2 != ""
                     {
-                        Spacer()
-                            .frame(height: 40)
-                        Text("Please re-enter your password")
-                            .foregroundColor(.gray)
-                        
-                        SecureField("Password", text: $password2)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.05))
-                            .cornerRadius(10)
-                        
-                        if password2 != ""
-                        {
-                            if password1 != password2 {
-                                Text("Passwords do not match")
-                                    .foregroundColor(.red)
-                            } else if password1 == password2 && username1 != ""{
-                                Button("Save") {( passMatch.toggle())
-                                }
-                                .foregroundColor(Color.white)
-                                .frame(width: 300, height: 50)
-                                .background(lightBlueColor)
-                                .cornerRadius(10)
+                        if password1 != password2 {
+                            Text("Passwords do not match")
+                                .foregroundColor(.red)
+                        } else if password1 == password2 && email != ""{
+                            Button("Save") {( passMatch.toggle())
+                                register()
+                                userRegistered = true
+                            } .alert(email + " was created", isPresented: $userRegistered) {
+                                Button("OK", role: .cancel) { }
+                                    .foregroundColor(Color.white)
+                                    .frame(width: 300, height: 50)
+                                    .background(lightBlueColor)
+                                    .cornerRadius(10)
                             }
                         }
-                        
-                        
                     }
-                    NavigationLink(destination: ContentView()) {
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(darkBlueColor)
-                        Text("Return to Login")
-                    }
+                    
+                    
+                    
                 }
-                .accentColor(darkBlueColor)
+                NavigationLink(destination: ContentView()) {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(darkBlueColor)
+                    Text("Return to Login")
+                }
             }
+            .accentColor(darkBlueColor)
+        }
         }
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)
     }
-}*/
+    func register(){
+        Auth.auth().createUser(withEmail: email, password: password1){
+            result, error in
+            if error  != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+}
 
 struct lexigramAlbum: View {
     
@@ -1205,13 +1332,13 @@ struct settingHome: View {
                             .cornerRadius(10)
                     }
                     
-                    /*NavigationLink(destination: exportPage()) {
+                    NavigationLink(destination: exportPage()) {
                         Text("Export Data")
                             .foregroundColor(Color.white)
                             .frame(width: 300, height: 50)
                             .background(lightBlueColor)
                             .cornerRadius(10)
-                    }*/
+                    }
                     Spacer()
                         .frame(height: 400)
                     
@@ -1257,6 +1384,7 @@ struct placesActivityView: View {
     @State var cratep = false
     @State var insidep = false
     @State var outsidep = false
+    @State var lexigramName = ""
     
     
     
@@ -1285,6 +1413,8 @@ struct placesActivityView: View {
                             
                             let synthesizer = AVSpeechSynthesizer()
                             synthesizer.speak(woods)
+                            lexigramName = "Woods"
+                            lexigramTracker()
                             
                         }) {
                             Image("place_1")
@@ -1304,6 +1434,8 @@ struct placesActivityView: View {
                             synthesizer.speak(beach)
                             beachP = true
                             imageAppear = 3
+                            lexigramName = "Beach"
+                            lexigramTracker()
                         }) {
                             Image("place_2")
                                 .resizable()
@@ -1324,6 +1456,8 @@ struct placesActivityView: View {
                             
                             dpP = true
                             imageAppear = 3
+                            lexigramName = "Dog Park"
+                            lexigramTracker()
                             
                         }) {
                             Image("place_3")
@@ -1346,6 +1480,8 @@ struct placesActivityView: View {
                             
                             cratep = true
                             imageAppear = 3
+                            lexigramName = "Crate"
+                            lexigramTracker()
                             
                         }) {
                             Image("place_4")
@@ -1366,6 +1502,8 @@ struct placesActivityView: View {
                             
                             insidep = true
                             imageAppear = 3
+                            lexigramName = "Inside"
+                            lexigramTracker()
                             
                         }) {
                             Image("place_5")
@@ -1386,6 +1524,8 @@ struct placesActivityView: View {
                             
                             outsidep = true
                             imageAppear = 3
+                            lexigramName = "Outside"
+                            lexigramTracker()
                         }) {
                             Image("place_6")
                                 .resizable()
@@ -1549,6 +1689,22 @@ struct placesActivityView: View {
         .accentColor(darkBlueColor)
         .navigationViewStyle(.stack)
     }
+    func lexigramTracker(){
+        let lexigramName = lexigramName
+        let currentDateTime = Date()
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        
+        let dateTimeString = formatter.string(from: currentDateTime)
+        
+        
+        timeOfPress.append(dateTimeString)
+        lexigrams.append(lexigramName)
+        
+        
+    }
 }
 
 
@@ -1626,6 +1782,7 @@ struct thingsActivityView: View {
     @State var toyp = false
     @State var treatp = false
     @State var foodp = false
+    @State var lexigramName = ""
     
     
     
@@ -1653,6 +1810,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(thing)
                             ballp = true
                             imageAppear = 3
+                            lexigramName = "Ball"
+                            lexigramTracker()
                         }) {
                             Image("thing_1")
                                 .resizable()
@@ -1671,6 +1830,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(rope)
                             ropep = true
                             imageAppear = 3
+                            lexigramName = "Rope"
+                            lexigramTracker()
                         }) {
                             Image("thing_2")
                                 .resizable()
@@ -1690,6 +1851,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(kong)
                             kongp = true
                             imageAppear = 3
+                            lexigramName = "Kong"
+                            lexigramTracker()
                         }) {
                             Image("thing_3")
                                 .resizable()
@@ -1709,6 +1872,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(toy)
                             toyp = true
                             imageAppear = 3
+                            lexigramName = "Toy"
+                            lexigramTracker()
                         }) {
                             Image("thing_4")
                                 .resizable()
@@ -1727,6 +1892,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(treat)
                             treatp = true
                             imageAppear = 3
+                            lexigramName = "Treat"
+                            lexigramTracker()
                         }) {
                             Image("thing_5")
                                 .resizable()
@@ -1745,6 +1912,8 @@ struct thingsActivityView: View {
                             synthesizer.speak(food)
                             foodp = true
                             imageAppear = 3
+                            lexigramName = "Food"
+                            lexigramTracker()
                         }) {
                             Image("thing_6")
                                 .resizable()
@@ -1911,14 +2080,23 @@ struct thingsActivityView: View {
         .navigationViewStyle(.stack)
         
     }
-    
+    func lexigramTracker(){
+        let lexigramName = lexigramName
+        let currentDateTime = Date()
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        
+        let dateTimeString = formatter.string(from: currentDateTime)
+        
+        
+        timeOfPress.append(dateTimeString)
+        lexigrams.append(lexigramName)
+        
+    }
     
 }
-
-
-
-
-
 
 struct thingsActivityPage: View {
     var body: some View {
@@ -1961,10 +2139,6 @@ struct thingsActivityPage: View {
                             
                         }
                     }
-                    
-                    
-                    
-                    
                 }
             }
             
@@ -1976,7 +2150,6 @@ struct thingsActivityPage: View {
     }
     
 }
-
 
 struct feelingsActivityView: View {
     
@@ -1993,10 +2166,8 @@ struct feelingsActivityView: View {
     
     @State  var hungryp = false
     @State var ouchp = false
-    
-    
     @State  var imageAppear = 3
-    
+    @State var lexigramName = ""
     
     var body: some View {
         
@@ -2017,6 +2188,8 @@ struct feelingsActivityView: View {
                             synthesizer.speak(hungry)
                             hungryp = true
                             imageAppear = 3
+                            lexigramName = "Hungry"
+                            lexigramTracker()
                             
                         }) {
                             Image("feeling_1")
@@ -2036,6 +2209,8 @@ struct feelingsActivityView: View {
                             synthesizer.speak(ouch)
                             ouchp = true
                             imageAppear = 3
+                            lexigramName = "Ouch"
+                            lexigramTracker()
                         }) {
                             Image("feeling_2")
                                 .resizable()
@@ -2107,7 +2282,21 @@ struct feelingsActivityView: View {
         .navigationViewStyle(.stack)
         
     }
-    
+    func lexigramTracker(){
+        let lexigramName = lexigramName
+        let currentDateTime = Date()
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        
+        let dateTimeString = formatter.string(from: currentDateTime)
+        
+        
+        timeOfPress.append(dateTimeString)
+        lexigrams.append(lexigramName)
+        
+    }
 }
 
 
@@ -2152,10 +2341,6 @@ struct feelingsActivityPage: View {
                             
                         }
                     }
-                    
-                    
-                    
-                    
                 }
             }
             
@@ -2185,11 +2370,8 @@ struct actionsActivityView: View {
     
     @State  var chewp = false
     @State var pettingp = false
-    
-    
     @State  var imageAppear = 3
-    
-    
+    @State var lexigramName = ""
     
     var body: some View {
         
@@ -2210,6 +2392,8 @@ struct actionsActivityView: View {
                             synthesizer.speak(chew)
                             chewp = true
                             imageAppear = 3
+                            lexigramName = "Chew"
+                            lexigramTracker()
                         }) {
                             Image("action_1")
                                 .resizable()
@@ -2228,6 +2412,8 @@ struct actionsActivityView: View {
                             synthesizer.speak(petting)
                             pettingp = true
                             imageAppear = 3
+                            lexigramName = "Petting"
+                            lexigramTracker()
                         }) {
                             Image("action_2")
                                 .resizable()
@@ -2300,7 +2486,21 @@ struct actionsActivityView: View {
         .navigationViewStyle(.stack)
         
     }
-    
+    func lexigramTracker(){
+        let lexigramName = lexigramName
+        let currentDateTime = Date()
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        
+        let dateTimeString = formatter.string(from: currentDateTime)
+        
+        
+        timeOfPress.append(dateTimeString)
+        lexigrams.append(lexigramName)
+        
+    }
 }
 
 
@@ -2333,7 +2533,6 @@ struct actionsActivityPage: View {
                                 .foregroundColor(darkBlueColor)
                                 .background(.white)
                                 .font(.system(size: 80))
-                            
                         }
                         Spacer()
                             .frame(width: 700)
@@ -2345,18 +2544,12 @@ struct actionsActivityPage: View {
                             
                         }
                     }
-                    
-                    
                 }
                 
             }
         }
-        
-        
         .navigationViewStyle(.stack)
         .navigationBarHidden(true)
     }
     
 }
-
-
