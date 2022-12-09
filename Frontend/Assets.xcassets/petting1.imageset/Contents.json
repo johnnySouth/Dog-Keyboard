@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "petting1.webp",
-      "idiom" : "universal"
+      "filename" : "A-woman-petting-a-dogs-head-600x400.jpg.optimal.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

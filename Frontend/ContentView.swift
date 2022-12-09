@@ -416,7 +416,6 @@ struct audioSettings: View {
     }
 }
 
-
 var lexigrams: [String] = []
 var sessionGoal: String = ""
 var timeOfPress: [String] = []
@@ -432,11 +431,11 @@ func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [St
     let dateTimeString = formatter.string(from: currentDateTime)
     print(NSHomeDirectory())
     // File Name
-    let sFileName = "Session: \(dateTimeString).csv"
+    let fileName = "Session_" + UUID().uuidString + ".csv"
     
     let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
     
-    let documentURL = URL(fileURLWithPath: documentDirectoryPath).appendingPathComponent(sFileName)
+    let documentURL = URL(fileURLWithPath: documentDirectoryPath).appendingPathComponent(fileName)
     
     let output =  OutputStream.toMemory()
     
@@ -455,14 +454,8 @@ func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [St
     var arrOfUserData = [[String]]()
     let lexigramString = lexigrams.joined(separator: ",")
     let dateString = timeOfPress.joined(separator: ",")
-   // let dogString = dogsForSession.joined(separator: ",")
     
     arrOfUserData.append([dogForSession,sessionGoal,dateString,lexigramString])
-    //arrOfUserData.append(["234","Johnson Doe","34","HR"])
-    //arrOfUserData.append(["567","John Appleseed","40","Engg"])
-
-    
-   // arrOfUserData.append(lexigrams)
     
     //Employee_ID,Employee_Name,Employee_Age,Employee_Designation
     // 123          John Doe        30          Sys Analyst
@@ -479,6 +472,7 @@ func exportData(lexigramPressed: [String],sessionContext: String, dateTiime: [St
         
         do{
             try buffer.write(to: documentURL)
+            print(NSHomeDirectory())
         }
         catch{
           print("error")

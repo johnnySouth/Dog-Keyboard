@@ -59,6 +59,7 @@
 		604B5C9C293FD4F3007FCEF7 /* FrontendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUITests.swift; sourceTree = "<group>"; };
 		604B5C9E293FD4F3007FCEF7 /* FrontendUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		60522F7C2940785B0004021D /* AddDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDog.swift; sourceTree = "<group>"; };
+		6053E10529439F0400A19360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60A6D93D29430EF300AC1BD6 /* selectPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +114,7 @@
 		604B5C7F293FD4EA007FCEF7 /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				6053E10529439F0400A19360 /* Info.plist */,
 				604B5C80293FD4EA007FCEF7 /* FrontendApp.swift */,
 				604B5C82293FD4EA007FCEF7 /* ContentView.swift */,
 				6042413B29430D0000C097BD /* ImagePicker.swift */,
@@ -460,6 +462,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Frontend/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -505,6 +509,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Frontend/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
