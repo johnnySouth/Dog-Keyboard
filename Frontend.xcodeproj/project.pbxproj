@@ -12,6 +12,7 @@
 		601E9A892940696A005E6A4F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 601E9A882940696A005E6A4F /* FirebaseAuth */; };
 		601E9A8B2940696A005E6A4F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 601E9A8A2940696A005E6A4F /* FirebaseFirestore */; };
 		601E9A8D2940696A005E6A4F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 601E9A8C2940696A005E6A4F /* FirebaseStorage */; };
+		6042413C29430D0000C097BD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6042413B29430D0000C097BD /* ImagePicker.swift */; };
 		604B5C81293FD4EA007FCEF7 /* FrontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B5C80293FD4EA007FCEF7 /* FrontendApp.swift */; };
 		604B5C83293FD4EA007FCEF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B5C82293FD4EA007FCEF7 /* ContentView.swift */; };
 		604B5C85293FD4F2007FCEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604B5C84293FD4F2007FCEF7 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		604B5C9D293FD4F3007FCEF7 /* FrontendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B5C9C293FD4F3007FCEF7 /* FrontendUITests.swift */; };
 		604B5C9F293FD4F3007FCEF7 /* FrontendUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B5C9E293FD4F3007FCEF7 /* FrontendUITestsLaunchTests.swift */; };
 		60522F7D2940785B0004021D /* AddDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60522F7C2940785B0004021D /* AddDog.swift */; };
+		60A6D93E29430EF300AC1BD6 /* selectPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6D93D29430EF300AC1BD6 /* selectPhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		601E9A822940575D005E6A4F /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		601E9A832940575F005E6A4F /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
 		601E9A85294067C1005E6A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6042413B29430D0000C097BD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		604B5C7D293FD4EA007FCEF7 /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604B5C80293FD4EA007FCEF7 /* FrontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendApp.swift; sourceTree = "<group>"; };
 		604B5C82293FD4EA007FCEF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		604B5C9C293FD4F3007FCEF7 /* FrontendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUITests.swift; sourceTree = "<group>"; };
 		604B5C9E293FD4F3007FCEF7 /* FrontendUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		60522F7C2940785B0004021D /* AddDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDog.swift; sourceTree = "<group>"; };
+		60A6D93D29430EF300AC1BD6 /* selectPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 			children = (
 				604B5C80293FD4EA007FCEF7 /* FrontendApp.swift */,
 				604B5C82293FD4EA007FCEF7 /* ContentView.swift */,
+				6042413B29430D0000C097BD /* ImagePicker.swift */,
+				60A6D93D29430EF300AC1BD6 /* selectPhotoView.swift */,
 				60522F7C2940785B0004021D /* AddDog.swift */,
 				604B5C84293FD4F2007FCEF7 /* Assets.xcassets */,
 				601E9A832940575F005E6A4F /* CHCSVParser.h */,
@@ -290,6 +296,8 @@
 			files = (
 				604B5C83293FD4EA007FCEF7 /* ContentView.swift in Sources */,
 				604B5C81293FD4EA007FCEF7 /* FrontendApp.swift in Sources */,
+				6042413C29430D0000C097BD /* ImagePicker.swift in Sources */,
+				60A6D93E29430EF300AC1BD6 /* selectPhotoView.swift in Sources */,
 				60522F7D2940785B0004021D /* AddDog.swift in Sources */,
 				601E9A842940575F005E6A4F /* CHCSVParser.m in Sources */,
 			);

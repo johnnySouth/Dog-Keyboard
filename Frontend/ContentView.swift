@@ -349,6 +349,13 @@ struct lexigramSettings: View {
                         .background(lightBlueColor)
                         .cornerRadius(10)
                 }*/
+                NavigationLink(destination: selectPhotoView()) {
+                    Text("Add new lexigram or photo")
+                        .foregroundColor(Color.white)
+                        .frame(width: 300, height: 50)
+                        .background(lightBlueColor)
+                        .cornerRadius(10)
+                }
                 NavigationLink(destination: settingHome()) {
                     Image(systemName: "arrow.left")
                         .foregroundColor(darkBlueColor)
